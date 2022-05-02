@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import { TTree } from "./types";
+import { VTree } from "./components/VTree";
+import { Controls } from "./components/Controls";
+
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const [tree, setTree] = useState<TTree | null>(null);
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Controls onTreeCreated={setTree}></Controls>
       </header>
+      <section className="App-content">{tree && <VTree tree={tree} />}</section>
     </div>
   );
 }
