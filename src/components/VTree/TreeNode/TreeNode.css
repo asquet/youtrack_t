@@ -1,0 +1,12 @@
+.treeNode {
+    display: flex;
+
+    padding: 3px 5px;
+    box-sizing: border-box;
+    align-items: center;
+
+    cursor: pointer;
+}
+.treeNode:hover, .treeNode:focus {
+    background: #ebf6ff;
+}

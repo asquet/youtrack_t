@@ -1,0 +1,11 @@
+.treeNode_toggle {
+    width: 16px;
+    height: 16px;
+
+    margin-right: 10px;
+
+    transition: transform ease 0.15s;
+}
+.treeNode_toggle__closed {
+    transform: rotate(-90deg);
+}
